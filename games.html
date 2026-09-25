@@ -1,82 +1,152 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
-   <title>Bootstrap Example</title>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Games in Development</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-   <!-- Using Bootstrap 5 framework -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-       rel="stylesheet">
+  <!-- Bootstrap 5 CSS (must load BEFORE style.css so our overrides win) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-   <!-- Bootstrap JavaScript -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Site styles -->
+  <link rel="stylesheet" href="style.css">
 
-   <!-- jQuery used to load the navbar -->
-   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- jQuery (only used to load the navbar) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
   <!-- Navbar gets added here -->
-   <div id="nav-placeholder"></div>
-   
-    <div class="container-fluid bg-dark text-white p-5 my-0 text-center min-vh-100">
-    <h1>Six games for the price of none</h1>
-      <p>The idea was pieced together after I'd come across a Reddit post about there not being a 'Final Destination' game, so I decided to make one! I knew I couldn't create and manipulate 3D environments yet, but I did know I could write my ass off, so I decided on a branching text adventure. A single shell script about a deadly house ("House Trap") was the starting point.<br>As functions piled up, the need to refactor turned one script into a main.py entry point with a dedicated hazard engine to handle environmental dangers, the need for more reactivity led to the integration of a QTE engine, and so on until before I knew it, the project had grown into a full-fledged game-agnostic engine with bootstrapping, assets, animation, JSON game data for SIX games I am also developing, data verification on init, debugging logs and more!</p>
+  <div id="nav-placeholder"></div>
+  <main id="main-content" class="container py-5">
+    <p class="eyebrow">Games</p>
+    <h1 class="display-6 fw-bold">Six games for the price of none (hopefully only for now)</h1>
 
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                Death's Designs
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-              <div class="accordion-body">
-                <strong>The most complete game so far.</strong> Do you believe a stranger's vision? A bridge collapsing, an escalator turning into a meat grinder, whatever catastrophe the shuffled deck deals that round.<br>Disrupt the design by helping people escape, letting the chaos unfold, or walking away entirely. Now Death is correcting it, one name at a time, and you're the only one who ever saw it coming.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                The Noun
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                <strong>Among Us with a twist.</strong> An Antarctic research outpost, cut off for the season, twelve people who all know each other ..or so they think. Something arrived with a helicopter crash, and it can wear a face perfectly enough that even the people who see it every day can't tell. Investigate, run tests, confront people you have to keep working alongside no matter what you suspect. If you keep getting it wrong, you'll tank your reputation and risk handing the thing your whole crew.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                Choose Your Own Deadventure
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                <strong>A unique take on the choose-your-own-adventure genre.</strong> A true branching-node adventure, not a linear game with the occasional fork — every scene is a real decision point, and every decision can save someone or cost them. Death's shuffled a kill order for your friend group behind the scenes, and the only warning is a phone call you can choose to ignore.
-              </div>
-            </div>
+
+    <div id="game-carousel" class="carousel slide my-4">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <figure class="mb-0">
+            <img src="assets/images/terminal_game.png" class="d-block w-100"
+              alt="Terminal window running the original text adventure">
+            <figcaption class="carousel-caption-below">From single script to EXE file:<br>McKinley Manor would become HouseTrap</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-item">
+          <figure class="mb-0">
+            <img src="assets/images/fdt.png" class="d-block w-100" alt="Final Destination: Terminal title screen">
+            <figcaption class="carousel-caption-below">EXEs became APKs and ADBs:<br>HouseTrap turned into Final Destination: Terminal</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-item">
+          <figure class="mb-0">
+            <img src="assets/images/store_listing.png" class="d-block w-100" alt="DieNamic Engine Google Play Store screen">
+            <figcaption class="carousel-caption-below">FDT became legally distinct - Death's Designs - and what ran it became a full-fledged game-agnostic engine</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#game-carousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#game-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#game-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#game-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#game-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <p class="lead">
+      As functions piled up, the need to refactor turned one script into a main.py entry point with several
+      dedicated engines for major function groups. A hazard engine was created to handle environmental dangers,
+      the need for danger reactivity led to the integration of a QTE engine, and so on until
+      the project had grown into a full-fledged game-agnostic engine with bootstrapping, assets, animation and audio,
+      JSON game data for SIX games I am also developing, data verification on init, debugging logs and more!
+    </p>
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseOne">
+            Death's Designs
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            <strong>The most complete game so far.</strong> Do you believe a stranger's vision? A bridge collapsing, an
+            escalator turning into a meat grinder, whatever catastrophe the shuffled deck deals that round.<br>Disrupt
+            the design by helping people escape, letting the chaos unfold, or walking away entirely. Now Death is
+            correcting it, one name at a time, and you're the only one who ever saw it coming.
           </div>
         </div>
-      
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseTwo">
+            The Noun
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <strong>Among Us with a twist.</strong> An Antarctic research outpost, cut off for the season, twelve people
+            who all know each other ..or so they think. Something arrived with a helicopter crash, and it can wear a
+            face perfectly enough that even the people who see it every day can't tell. Investigate, run tests, confront
+            people you have to keep working alongside no matter what you suspect. If you keep getting it wrong, you'll
+            tank your reputation and risk handing the thing your whole crew.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseThree">
+            Choose Your Own Deadventure
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <strong>A unique take on the choose-your-own-adventure genre.</strong> A true branching-node adventure, not
+            a linear game with the occasional fork — every scene is a real decision point, and every decision can save
+            someone or cost them. Death's shuffled a kill order for your friend group behind the scenes, and the only
+            warning is a phone call you can choose to ignore.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
   <br>
   <footer>
     <div class="alert alert-warning">
       <!-- This footer comes with a warning for people with a low tolerance for graphic content -->
-      <strong>Warning!</strong> Rated 17+. Contains graphic text and 'South Park'-style animated depictions of death, injury, and gore; psychological horror; mature language; dark themes. Not suitable for children.
-          <!-- This footer comes with a warning for people with a low tolerance for graphic content -->
+      <strong>Warning!</strong> Rated 17+. Contains graphic text and 'South Park'-style animated depictions of death,
+      injury, and gore; psychological horror; mature language; dark themes. Not suitable for children.
+      <!-- This footer comes with a warning for people with a low tolerance for graphic content -->
     </div>
     <br>&copy; 2026 DieNamic Engine. All rights reserved.
   </footer>
-        </div>
-   <script>
-       // Load only the #site-nav element from navbar.html
-       $("#nav-placeholder").load("navbar.html #site-nav");
-   </script>
+  <script>
+    // Load only the #site-nav element from navbar.html
+    $("#nav-placeholder").load("navbar.html #site-nav");
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
 </body>
 

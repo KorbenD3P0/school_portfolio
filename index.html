@@ -1,123 +1,142 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
-   <title>Bootstrap Example</title>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dallas Pancoast - Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-   <!-- Using Bootstrap 5 framework -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-       rel="stylesheet">
+    <!-- Bootstrap 5 CSS (must load BEFORE style.css so our overrides win) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-   <!-- Bootstrap JavaScript -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Site styles -->
+    <link rel="stylesheet" href="style.css">
 
-   <!-- jQuery used to load the navbar -->
-   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- jQuery (only used to load the navbar) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
-  <!-- Navbar gets added here -->
-   <div id="nav-placeholder"></div>
+    <!-- Navbar gets added here -->
+    <div id="nav-placeholder"></div>
 
     <main id="main-content" class="container py-5">
-    <p>About</p>
-    <h1 class="display-6 fw-bold">Hi, I'm Dallas.</h1>
-    <p>
-        I build and run things end to end. What began as cronjobs and bash 
-        scripting projects turned into a self-hosted homelab with real
-        identity management, monitoring, and disaster recovery, and even a
-        from-scratch Python game engine with six functional titles in development. 
-        Most of what's below came out of side projects, not classroom assignments: 
-        I run into a real problem, learn what's needed to solve it properly, and 
-        track it in runbooks and personal tickets so I don't have to relearn it later.
-    </p>
+        <p class="eyebrow">About</p>
+        <h1 class="display-6 fw-bold">Hi, I'm Dallas.</h1>
+        <p class="lead">
+            I build and run things end to end.<br>What began as a hobby creating cronjobs and bash
+            script projects turned into a self-hosted homelab with real
+            identity management, monitoring, and disaster recovery, as well as a
+            from-scratch Python game engine with six functional titles in various stages of development.<br><br>
+            The site you're reading this on was a class assignment; what's below came out of personal projects completed before going back to school.
+            I run into a real problem, learn what's needed to solve it properly, and
+            track it in runbooks and personal tickets so I don't have to relearn it later.
+        </p>
 
-    <h2 class="display-6 fw-bold">Technical Skills</h2>
+        <h2 class="h4 fw-bold mt-5 mb-3">Technical Skills</h2>
 
         <div class="col">
             <div class="accordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#skills-sysadmin"
-                            aria-expanded="false"
-                            aria-controls="skills-sysadmin">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#skills-sysadmin" aria-expanded="false" aria-controls="skills-sysadmin">
                             Systems &amp; Network Administration
                         </button>
                     </h2>
                     <div id="skills-sysadmin" class="accordion-collapse collapse">
                         <div class="accordion-body">
                             <ul class="mb-0">
-                                <li class="mb-2"><strong>Linux administration</strong> — headless server operation (systemd targets, journalctl, UFW firewalling), disk/mount management, systemd unit authoring</li>
-                                <li class="mb-2"><strong>Containerization</strong> — Docker &amp; Docker Compose running a 10+ service production stack</li>
-                                <li class="mb-2"><strong>Reverse proxy &amp; PKI</strong> — Nginx Proxy Manager routing, custom Multi-SAN certificate forging with OpenSSL, root CA trust deployment</li>
-                                <li class="mb-2"><strong>VPN mesh networking</strong> — Tailscale/WireGuard, MagicDNS, per-interface firewall scoping</li>
-                                <li class="mb-2"><strong>DNS administration</strong> — Pi-hole custom-domain resolution and ad-blocking across a split-horizon network</li>
-                                <li><strong>Enterprise identity</strong> — Windows Server Active Directory Domain Services, Domain Controller promotion, OU/Security Group design, Group Policy Objects, NTFS permissioning</li>
+                                <li class="mb-2"><strong>Linux administration</strong> — headless server operation
+                                    (systemd targets, journalctl, UFW firewalling), disk/mount management, systemd unit
+                                    authoring</li>
+                                <li class="mb-2"><strong>Containerization</strong> — Docker &amp; Docker Compose running
+                                    a 10+ service production stack</li>
+                                <li class="mb-2"><strong>Reverse proxy &amp; PKI</strong> — Nginx Proxy Manager routing,
+                                    custom Multi-SAN certificate forging with OpenSSL, root CA trust deployment</li>
+                                <li class="mb-2"><strong>VPN mesh networking</strong> — Tailscale/WireGuard, MagicDNS,
+                                    per-interface firewall scoping</li>
+                                <li class="mb-2"><strong>DNS administration</strong> — Pi-hole custom-domain resolution
+                                    and ad-blocking across a split-horizon network</li>
+                                <li><strong>Enterprise identity</strong> — Windows Server Active Directory Domain
+                                    Services, Domain Controller promotion, OU/Security Group design, Group Policy
+                                    Objects, NTFS permissioning</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
         <div class="col">
             <div class="accordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#skills-software"
-                            aria-expanded="false"
-                            aria-controls="skills-software">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#skills-software" aria-expanded="false" aria-controls="skills-software">
                             Software Engineering
-                            </button>
-                            </h2>
-                            <div id="skills-software" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                <ul class="mb-0">
-                                <li class="mb-2"><strong>Python</strong> — a ~20-mixin, MRO-composed game engine architecture; automation scripting; API integration</li>
-                                <li class="mb-2"><strong>Data-driven design</strong> — JSON schema validation, referential-integrity tooling built from scratch</li>
-                                <li class="mb-2"><strong>State machines</strong> — branching dialogue trees, environmental hazard chain-reactions, a 16+ type quick-time-event system</li>
-                                <li class="mb-2"><strong>Client-server</strong> — a self-hosted Flask/waitress leaderboard API behind a Cloudflare Tunnel, with its own security model</li>
-                                <li class="mb-2"><strong>Cross-platform release engineering</strong> — signed Android APK/AAB builds (Buildozer), Windows executables (PyInstaller), Linux</li>
-                                <li><strong>Automated QA tooling</strong> — a headless smoke-test driver and an automated "chaos crawler" regression tester I designed for the engine</li>
-                        </ul>
+                        </button>
+                    </h2>
+                    <div id="skills-software" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <ul class="mb-0">
+                                <li class="mb-2"><strong>Python</strong> — a ~20-mixin, MRO-composed game engine
+                                    architecture; automation scripting; API integration</li>
+                                <li class="mb-2"><strong>Data-driven design</strong> — JSON schema validation,
+                                    referential-integrity tooling built from scratch</li>
+                                <li class="mb-2"><strong>State machines</strong> — branching dialogue trees,
+                                    environmental hazard chain-reactions, a 16+ type quick-time-event system</li>
+                                <li class="mb-2"><strong>Client-server</strong> — a self-hosted Flask/waitress
+                                    leaderboard API behind a Cloudflare Tunnel, with its own security model</li>
+                                <li class="mb-2"><strong>Cross-platform release engineering</strong> — signed Android
+                                    APK/AAB builds (Buildozer), Windows executables (PyInstaller), Linux</li>
+                                <li><strong>Automated QA tooling</strong> — a headless smoke-test driver and an
+                                    automated "chaos crawler" regression tester I designed for the engine</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#skills-edge">
-                                Edge / On-Device AI
-                            </button>
-                        </h2>
-                        <div id="skills-edge" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <ul class="mb-0">
-                                    <li class="mb-2"><strong>Local LLM deployment</strong> — built llama.cpp from source on Android (Termux), running a quantized Qwen2.5 model fully offline</li>
-                                    <li class="mb-2"><strong>Applied ML pipeline</strong> — chained speech-to-text (Whisper.cpp) and vision (SmolVLM) models into on-device utilities</li>
-                                    <li class="mb-2"><strong>Real debugging under constraints</strong> — isolated and worked around a genuine thread-count race condition in llama.cpp's CPU compute path</li>
-                            <li><strong>Task automation</strong> — cron-scheduled Python pipelines (a fully local Gmail/Calendar morning digest), systemd boot-persistence scripting</li>
-                        </ul>
+        </div>
+        <div class="col">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#skills-edge">
+                            Edge / On-Device AI
+                        </button>
+                    </h2>
+                    <div id="skills-edge" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <ul class="mb-0">
+                                <li class="mb-2"><strong>Local LLM deployment</strong> — built llama.cpp from source on
+                                    Android (Termux), running a quantized Qwen2.5 model fully offline</li>
+                                <li class="mb-2"><strong>Applied ML pipeline</strong> — chained speech-to-text
+                                    (Whisper.cpp) and vision (SmolVLM) models into on-device utilities</li>
+                                <li class="mb-2"><strong>Real debugging under constraints</strong> — isolated and worked
+                                    around a genuine thread-count race condition in llama.cpp's CPU compute path</li>
+                                <li><strong>Task automation</strong> — cron-scheduled Python pipelines (a fully local
+                                    Gmail/Calendar morning digest), systemd boot-persistence scripting</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#skills-certifications">
-                                Certifications &amp; Coursework
-                            </button>
-                        </h2>
-                        <div id="skills-certifications" class="accordion-collapse collapse">
-                            <div class="accordion-body">
+        </div>
+        <div class="col">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#skills-certifications">
+                            Certifications &amp; Coursework
+                        </button>
+                    </h2>
+                    <div id="skills-certifications" class="accordion-collapse collapse">
+                        <div class="accordion-body">
                             <h6>Completed</h6>
                             <ul>
                                 <li>Linux Foundation — Intro to Linux</li>
@@ -131,22 +150,24 @@
                                 <li>Bachelor's of Computer Science</li>
                                 <li>Linux Foundation — Linux System Administration</li>
                                 <li>Linux Foundation — Linux Networking &amp; Security</li>
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>  
-  <br>
-  <footer>
-    <br>&copy; 2026 DieNamic Engine. All rights reserved.
-  </footer>
-   <script>
-       // Load only the #site-nav element from navbar.html
-       $("#nav-placeholder").load("navbar.html #site-nav");
-   </script>
         </div>
+    </main>
+    <br>
+    <footer>
+        <br>&copy; 2026 DieNamic Engine. All rights reserved.
+    </footer>
+    <script>
+        // Load only the #site-nav element from navbar.html
+        $("#nav-placeholder").load("navbar.html #site-nav");
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
 </body>
 

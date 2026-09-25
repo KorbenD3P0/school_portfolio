@@ -1,91 +1,161 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
-   <title>Bootstrap Example</title>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <title>Homelab</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-   <!-- Using Bootstrap 5 framework -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-       rel="stylesheet">
+    <!-- Bootstrap 5 CSS (must load BEFORE style.css so our overrides win) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-   <!-- Bootstrap JavaScript -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Site styles -->
+    <link rel="stylesheet" href="style.css">
 
-   <!-- jQuery used to load the navbar -->
-   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- jQuery (only used to load the navbar) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
   <!-- Navbar gets added here -->
-   <div id="nav-placeholder"></div>
+  <div id="nav-placeholder"></div>
 
-    <main id="main-content" class="container py-5">
-    <p>Projects</p>
-    <h1 class="display-6 fw-bold">The Homelab</h1>
-    <p>
-        A single Linux server running headless (no desktop session, to save
-        memory), reachable only through a private VPN mesh — nothing is exposed
-        to the internet by raw IP. Traffic flows: <strong>Tailscale mesh
-        &rarr; firewall (UFW, default-deny) &rarr; DNS resolution (Pi-hole)
-        &rarr; reverse proxy + TLS termination (Nginx Proxy Manager) &rarr;
+  <main id="main-content" class="container py-5">
+    <p class="eyebrow">Projects</p>
+    <h2 class="display-6 fw-bold">The Homelab</h2>
+    <p class="lead">A single Linux server running headless; no desktop session unless I want. The choice was
+      intentional, to save
+      memory since the tower is from ~2010.<br>The lab is reachable only through a private VPN mesh accessible from my
+      phone, laptop and tablet —
+      nothing is exposed to the internet by raw IP.<br><br>
+      Traffic flows: <strong>Tailscale mesh -> firewall (UFW, default-deny) -> DNS
+        resolution (Pi-hole) -> reverse proxy + TLS termination (Nginx Proxy Manager) ->
         individual service</strong>, with Authentik sitting in front of anything
-        that needs single sign-on and MFA.
+      that needs single sign-on and MFA.
     </p>
-  <h3 class="h5 mt-4">Services running in production</h3>
-  <!-- A plain HTML table on purpose: this is genuinely
+    <h3 class="h5 mt-4">Services running in production</h3>
+    <!-- A plain HTML table on purpose: this is genuinely
        tabular data (service / deployment / role), and a <table> gives
        screen-reader users row/column semantics a div-based layout
        can't. Bootstrap's .table-responsive wrapper keeps it usable on
        narrow screens without losing structure. -->
-  <div class="table-responsive">
-    <table class="table table-bordered align-middle">
-      <caption>Representative services, how they're deployed, and what they do</caption>
-      <thead>
-        <tr>
-          <th scope="col">Service</th>
-          <th scope="col">Deployment</th>
-          <th scope="col">Role</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Pi-hole</td><td>Docker</td><td>Network-wide DNS, ad-blocking, custom internal domain resolution</td></tr>
-        <tr><td>Nginx Proxy Manager</td><td>Docker</td><td>Reverse proxy + TLS termination for every internal service</td></tr>
-        <tr><td>Authentik</td><td>Docker Compose</td><td>SSO / identity provider, forward-auth for protected apps, MFA enforcement</td></tr>
-        <tr><td>Uptime Kuma</td><td>Docker</td><td>Active uptime/health monitoring with push-notification alerting</td></tr>
-        <tr><td>Duplicati</td><td>Docker</td><td>Scheduled, encrypted backups (3-2-1 strategy)</td></tr>
-        <tr><td>Vaultwarden</td><td>Docker</td><td>Self-hosted password manager</td></tr>
-        <tr><td>Home Assistant</td><td>Docker (host networking)</td><td>Smart-home hub, mDNS device discovery</td></tr>
-        <tr><td>Homepage</td><td>Docker</td><td>Unified dashboard aggregating live status from every other service</td></tr>
-        <tr><td>Umami</td><td>Docker (isolated network)</td><td>Self-hosted, privacy-respecting web analytics</td></tr>
-        <tr><td>Plex / Radarr / Sonarr / Prowlarr</td><td>Native systemd services</td><td>Media library automation</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="small text-secondary-emphasis">
-    Every container above runs under <a href="https://www.docker.com/">Docker</a>,
-    reachable only through the <a href="https://tailscale.com/">Tailscale</a>
-    mesh described above.
-  </p>
-    <main id="main-content" class="container py-5">
-    <h1 class="display-6 fw-bold">DieNamic Engine Core</h1>
-    <p>
-        A <a href="https://kivy.org/">Kivy</a>/Python game engine I designed and
-        built from scratch, targeting desktop (Windows/Linux/SteamOS) and Android.
-        It hosts six playable horror-parody titles (detailed on the
-        <a href="games.html">games page</a>) on one shared core — new games are
-        added by writing game-specific data and mixins, never by editing engine
-        internals.
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <caption>Representative services, how they're deployed, and what they do</caption>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Deployment</th>
+            <th scope="col">Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pi-hole</td>
+            <td>Docker</td>
+            <td>Network-wide DNS, ad-blocking, custom internal domain resolution</td>
+          </tr>
+          <tr>
+            <td>Nginx Proxy Manager</td>
+            <td>Docker</td>
+            <td>Reverse proxy + TLS termination for every internal service</td>
+          </tr>
+          <tr>
+            <td>Authentik</td>
+            <td>Docker Compose</td>
+            <td>SSO / identity provider, forward-auth for protected apps, MFA enforcement</td>
+          </tr>
+          <tr>
+            <td>Uptime Kuma</td>
+            <td>Docker</td>
+            <td>Active uptime/health monitoring with push-notification alerting</td>
+          </tr>
+          <tr>
+            <td>Duplicati</td>
+            <td>Docker</td>
+            <td>Scheduled, encrypted backups (3-2-1 strategy)</td>
+          </tr>
+          <tr>
+            <td>Vaultwarden</td>
+            <td>Docker</td>
+            <td>Self-hosted password manager</td>
+          </tr>
+          <tr>
+            <td>Home Assistant</td>
+            <td>Docker (host networking)</td>
+            <td>Smart-home hub, mDNS device discovery</td>
+          </tr>
+          <tr>
+            <td>Homepage</td>
+            <td>Docker</td>
+            <td>Unified dashboard aggregating live status from every other service</td>
+          </tr>
+          <tr>
+            <td>Umami</td>
+            <td>Docker (isolated network)</td>
+            <td>Self-hosted, privacy-respecting web analytics</td>
+          </tr>
+          <tr>
+            <td>Plex / Radarr / Sonarr / Prowlarr</td>
+            <td>Native systemd services</td>
+            <td>Media library automation</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small text-secondary-emphasis">
+      Every container above runs under <a href="https://www.docker.com/">Docker</a>,
+      reachable only through the <a href="https://tailscale.com/">Tailscale</a>
+      mesh described above.
     </p>
+    <br>
+    <h1 class="h4 fw-bold mt-5 mb-3">The '<a href="https://dienamic-engine.com/">DieNamic Engine</a>'</h1>
+    <p>
+      A Kivy/Python game engine core I designed and
+      built from scratch in my spare time, targeting desktop (Windows/Linux/SteamOS), Android and eventually iOS.
+      <br>It hosts six playable horror-parody titles (detailed on the
+      <a href="games.html">games page</a>) on one shared core, like a regular console — new games are
+      added by writing game-specific data and mixins that extend the core functionality to meet each game's needs,
+      never by editing engine internals. This allows for rapid prototyping and iteration, and for the
+      engine to be used as a base for future projects.<br><br>
+      The core engine was pieced together after coming across a Reddit post about there not being a
+      'Final Destination' game. Knowing I couldn't create and manipulate 3D environments yet, but knowing damn well that
+      I could write stories in that universe, the decision was made to create one and to start simple. I settled on a
+      branching text adventure like those
+      old 'Goosebumps' books I grew up on. A single shell script about a deadly house ("House Trap") was the
+      starting point.
+
+    </p>
+  </main>
   <br>
   <footer>
     <br>&copy; 2026 DieNamic Engine. All rights reserved.
+    <p class="small text-body-secondary">
+      <!--I had no experience with game development before the engine, and I want to 
+      be honest about my use of AI to help build it before going back to school-->
+      <strong>AI disclosure:</strong>
+      AI was NOT used to generate any of the art, story, or game design.
+      The DieNamic Engine is my own original idea while the
+      games created for it are based loosely on existing works. The concept, engine design, stories, UI, screens,
+      layouts and art
+      were either created by me, or in the case of sprites & animation, assets were purchased and RIGged by me using
+      tools I created.
+      <br>I used paid AI coding assistants as a tool to help write code and stub content for
+      features I didn't yet know how to build, as well as reviewing my existing code for
+      functionality I wasn't taking advantage of. I personally -and painstakingly-
+      integrated, tested and verified everything that shipped in APKs, ADBs, EXEs,
+      and am back in school for CS so I will continue to maintain it more independently in the future.<br>
+
+    </p>
   </footer>
-   <script>
-       // Load only the #site-nav element from navbar.html
-       $("#nav-placeholder").load("navbar.html #site-nav");
-   </script>
-        </div>
+  <script>
+    // Load only the #site-nav element from navbar.html
+    $("#nav-placeholder").load("navbar.html #site-nav");
+  </script>
 
 </body>
 

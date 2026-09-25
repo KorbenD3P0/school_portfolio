@@ -1,0 +1,85 @@
+/* Remap Bootstrap's own variables so its components use our colors. */
+:root,
+[data-bs-theme="dark"] {
+  --bs-body-bg: #0f1115;
+  /* page background (darkest tone) */
+  --bs-body-color: #e8e9ed;
+  /* normal text */
+  --bs-emphasis-color: #ffffff;
+  /* high-emphasis text */
+  --bs-secondary-color: #a7acba;
+  /* muted text */
+  --bs-border-color: #2a2f3d;
+  /* borders between surfaces */
+  --bs-border-color-translucent: #2a2f3d;
+  --bs-tertiary-bg: #1b1f2a;
+  /* highlighted panels */
+  --bs-link-color: #7db8ff;
+  --bs-link-hover-color: #a4d0ff;
+  --bs-link-color-rgb: 125, 184, 255;
+  --bs-primary: #3fdc9a;
+  /* mint accent */
+  --bs-primary-rgb: 63, 220, 154;
+  --bs-primary-text-emphasis: #5ec9a4;
+  --bs-focus-ring-color: rgba(255, 209, 102, 0.6);
+
+  /* Our own variables (Bootstrap doesn't use these) */
+  --bg-elevated: #161922;
+  /* raised panels (middle tone) */
+  --focus-ring: #ffd166;
+}
+
+.accordion {
+  --bs-accordion-bg: var(--bg-elevated);
+  /* closed item: middle tone */
+  --bs-accordion-border-color: var(--bs-border-color);
+  --bs-accordion-btn-color: var(--bs-primary-text-emphasis);
+  /* mint header text */
+  --bs-accordion-active-bg: var(--bs-tertiary-bg);
+  /* open header: highlight tone */
+  --bs-accordion-active-color: var(--bs-primary-text-emphasis);
+  --bs-accordion-btn-focus-border-color: var(--focus-ring);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem var(--bs-focus-ring-color);
+}
+
+.eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--bs-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Carousel: same-height slides, captions and barsbelow the image */
+#game-carousel img {
+  height: 480px;
+  object-fit: contain;
+  /* fit whole image inside, no cropping */
+  background-color: var(--bg-elevated);
+  /* fills the empty space beside tall images */
+  border-radius: var(--bs-border-radius);
+}
+
+.carousel-caption-below {
+  padding-top: 0.75rem;
+  text-align: center;
+  color: var(--bs-secondary-color);
+  font-size: 0.9rem;
+}
+
+#game-carousel .carousel-indicators {
+  position: static;
+  /* sit in normal flow, below the caption */
+  margin: 0.75rem 0 0;
+}
+
+#game-carousel .carousel-indicators [data-bs-target] {
+  background-color: var(--bs-primary);
+  /* mint bars */
+}
+
+#game-carousel .carousel-control-prev,
+#game-carousel .carousel-control-next {
+  height: 480px;
+  /* arrows centre on the image, not image + caption */
+}
