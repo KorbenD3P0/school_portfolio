@@ -8,7 +8,8 @@
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Bootstrap 5 CSS (must load BEFORE style.css so our overrides win) -->
+    <!-- Bootstrap 5 CSS (must load BEFORE style.css so these overrides win, like reverse Python 
+    where last function defined loads even if there's duplicates) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -24,48 +25,8 @@
   <div id="nav-placeholder"></div>
   <main id="main-content" class="container py-5">
     <p class="eyebrow">Games</p>
-    <h1 class="display-6 fw-bold">Six games for the price of none (hopefully only for now)</h1>
-
-
-    <div id="game-carousel" class="carousel slide my-4">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <figure class="mb-0">
-            <img src="assets/images/terminal_game.png" class="d-block w-100"
-              alt="Terminal window running the original text adventure">
-            <figcaption class="carousel-caption-below">From single script to EXE file:<br>McKinley Manor would become HouseTrap</figcaption>
-          </figure>
-        </div>
-        <div class="carousel-item">
-          <figure class="mb-0">
-            <img src="assets/images/fdt.png" class="d-block w-100" alt="Final Destination: Terminal title screen">
-            <figcaption class="carousel-caption-below">EXEs became APKs and ADBs:<br>HouseTrap turned into Final Destination: Terminal</figcaption>
-          </figure>
-        </div>
-        <div class="carousel-item">
-          <figure class="mb-0">
-            <img src="assets/images/store_listing.png" class="d-block w-100" alt="DieNamic Engine Google Play Store screen">
-            <figcaption class="carousel-caption-below">FDT became legally distinct - Death's Designs - and what ran it became a full-fledged game-agnostic engine</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#game-carousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#game-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#game-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#game-carousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#game-carousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+    <h1 class="display-6 fw-bold">Six games for the price of none</h1>
+    <p>(hopefully only for now, though!)</p>
 
     <p class="lead">
       As functions piled up, the need to refactor turned one script into a main.py entry point with several
@@ -142,7 +103,12 @@
   </footer>
   <script>
     // Load only the #site-nav element from navbar.html
-    $("#nav-placeholder").load("navbar.html #site-nav");
+      $("#nav-placeholder").load("navbar.html #site-nav", function () {
+      const page = location.pathname.split("/").pop() || "index.html";
+      $('#site-nav .nav-link[href="' + page + '"]')
+          .addClass("active")
+          .attr("aria-current", "page");
+      });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

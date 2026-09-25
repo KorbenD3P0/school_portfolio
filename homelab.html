@@ -2,14 +2,14 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-  <title>
     <title>Homelab</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Bootstrap 5 CSS (must load BEFORE style.css so our overrides win) -->
+    <!-- Bootstrap 5 CSS (must load BEFORE style.css so these overrides win, like reverse Python 
+     where last function defined loads even if there's duplicates) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -113,7 +113,7 @@
       mesh described above.
     </p>
     <br>
-    <h1 class="h4 fw-bold mt-5 mb-3">The '<a href="https://dienamic-engine.com/">DieNamic Engine</a>'</h1>
+    <h1 class="h4 fw-bold mt-5 mb-3">The '<a href="https://play.google.com/store/apps/details?id=org.dienamicengine.dep_fdt&hl=en-US">DieNamic Engine</a>'</h1>
     <p>
       A Kivy/Python game engine core I designed and
       built from scratch in my spare time, targeting desktop (Windows/Linux/SteamOS), Android and eventually iOS.
@@ -121,13 +121,66 @@
       <a href="games.html">games page</a>) on one shared core, like a regular console — new games are
       added by writing game-specific data and mixins that extend the core functionality to meet each game's needs,
       never by editing engine internals. This allows for rapid prototyping and iteration, and for the
-      engine to be used as a base for future projects.<br><br>
+      engine to be used as a base for future projects.<br>
       The core engine was pieced together after coming across a Reddit post about there not being a
       'Final Destination' game. Knowing I couldn't create and manipulate 3D environments yet, but knowing damn well that
       I could write stories in that universe, the decision was made to create one and to start simple. I settled on a
-      branching text adventure like those
-      old 'Goosebumps' books I grew up on. A single shell script about a deadly house ("House Trap") was the
-      starting point.
+      branching text adventure like those old 'Goosebumps' books I grew up on. A single shell script about a deadly house 
+      ("House Trap") was the starting point. 
+    </p>
+    <div id="game-carousel" class="carousel slide my-4">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <figure class="mb-0">
+            <img src="assets/images/terminal_game.png" class="d-block w-100"
+              alt="Terminal window running the original text adventure">
+            <figcaption class="carousel-caption-below">From single script to EXE file<br>McKinley Manor would become
+              HouseTrap - a script grew</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-item">
+          <figure class="mb-0">
+            <img src="assets/images/fdt.png" class="d-block w-100" alt="Final Destination: Terminal title screen">
+            <figcaption class="carousel-caption-below">EXEs became APKs and ADBs<br>HouseTrap turned into Final
+              Destination: Terminal - I used Buildozer to package the project for Android and successfully ported to my
+              Steam Deck for shigs</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-item">
+          <figure class="mb-0">
+            <img src="assets/images/store_listing.png" class="d-block w-100"
+              alt="DieNamic Engine Google Play Store screen">
+            <figcaption class="carousel-caption-below">To the Google Play Store, and beyond!<br>FDT became legally
+              distinct - Death's Designs - and what it ran on became a full-fledged game-agnostic engine</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#game-carousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#game-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#game-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#game-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#game-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <p>
+      <br>As an amateur game developer, I had to start asking myself down to earth questions. What do all games need? A
+      world to take place in. A location became a navigable map, that map got filled with objects, those objects got
+      descriptions, attributes and details, those details became lore, that lore became unlockable through action. Find
+      the item, unlock the backstory in a journal. Along came achievements, character types with their own strengths and
+      weaknesses, an antagonist that learns from your actions, chain-reactive dangers.. The idea was converting movie
+      tropes into game mechanics, and I have a blast doing it. There are games that emulate John Carpenter's The Thing,
+      Saw, A Nightmare on Elm Street, and whatever else I can think up, all with their own separate functions that all
+      work on the same core engine.
 
     </p>
   </main>
@@ -149,14 +202,21 @@
       functionality I wasn't taking advantage of. I personally -and painstakingly-
       integrated, tested and verified everything that shipped in APKs, ADBs, EXEs,
       and am back in school for CS so I will continue to maintain it more independently in the future.<br>
-
     </p>
   </footer>
   <script>
     // Load only the #site-nav element from navbar.html
-    $("#nav-placeholder").load("navbar.html #site-nav");
+            // Load only the #site-nav element from navbar.html
+        $("#nav-placeholder").load("navbar.html #site-nav", function () {
+        const page = location.pathname.split("/").pop() || "index.html";
+        $('#site-nav .nav-link[href="' + page + '"]')
+            .addClass("active")
+            .attr("aria-current", "page");
+        });
   </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -8,7 +8,8 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Bootstrap 5 CSS (must load BEFORE style.css so our overrides win) -->
+    <!-- Bootstrap 5 CSS (must load BEFORE style.css so these overrides win, like reverse Python 
+     where last function defined loads even if there's duplicates) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -31,7 +32,9 @@
             script projects turned into a self-hosted homelab with real
             identity management, monitoring, and disaster recovery, as well as a
             from-scratch Python game engine with six functional titles in various stages of development.<br><br>
-            The site you're reading this on was a class assignment; what's below came out of personal projects completed before going back to school.
+            The site you're reading this on was a class assignment, but it's actually being hosted on my own server,
+            with a custom Nginx reverse proxy and a Let's Encrypt certificate I generated myself.
+            What's below came out of personal projects I researched and completed before going back to school.
             I run into a real problem, learn what's needed to solve it properly, and
             track it in runbooks and personal tickets so I don't have to relearn it later.
         </p>
@@ -163,7 +166,12 @@
     </footer>
     <script>
         // Load only the #site-nav element from navbar.html
-        $("#nav-placeholder").load("navbar.html #site-nav");
+        $("#nav-placeholder").load("navbar.html #site-nav", function () {
+        const page = location.pathname.split("/").pop() || "index.html";
+        $('#site-nav .nav-link[href="' + page + '"]')
+            .addClass("active")
+            .attr("aria-current", "page");
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
