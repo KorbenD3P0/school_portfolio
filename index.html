@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <a href ="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
     <!-- Navbar gets added here -->
     <div id="nav-placeholder"></div>
 
@@ -41,121 +41,107 @@
         </p>
 
         <h2 class="h4 fw-bold mt-5 mb-3">Technical Skills</h2>
-
-        <div class="col">
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#skills-sysadmin" aria-expanded="false" aria-controls="skills-sysadmin">
-                            Systems &amp; Network Administration
-                        </button>
-                    </h3>
-                    <div id="skills-sysadmin" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <ul class="mb-0">
-                                <li class="mb-2"><strong>Linux administration</strong> — headless server operation
-                                    (systemd targets, journalctl, UFW firewalling), disk/mount management, systemd unit
-                                    authoring</li>
-                                <li class="mb-2"><strong>Containerization</strong> — Docker &amp; Docker Compose running
-                                    a 10+ service production stack</li>
-                                <li class="mb-2"><strong>Reverse proxy &amp; PKI</strong> — Nginx Proxy Manager routing,
-                                    custom Multi-SAN certificate forging with OpenSSL, root CA trust deployment</li>
-                                <li class="mb-2"><strong>VPN mesh networking</strong> — Tailscale/WireGuard, MagicDNS,
-                                    per-interface firewall scoping</li>
-                                <li class="mb-2"><strong>DNS administration</strong> — Pi-hole custom-domain resolution
-                                    and ad-blocking across a split-horizon network</li>
-                                <li><strong>Enterprise identity</strong> — Windows Server Active Directory Domain
-                                    Services, Domain Controller promotion, OU/Security Group design, Group Policy
-                                    Objects, NTFS permissioning</li>
-                            </ul>
-                        </div>
+        <div class="accordion" id="skills-accordion">
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#skills-sysadmin" aria-expanded="false" aria-controls="skills-sysadmin">
+                        Systems &amp; Network Administration
+                    </button>
+                </h3>
+                <div id="skills-sysadmin" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul class="mb-0">
+                            <li class="mb-2"><strong>Linux administration</strong> — headless server operation
+                                (systemd targets, journalctl, UFW firewalling), disk/mount management, systemd unit
+                                authoring</li>
+                            <li class="mb-2"><strong>Containerization</strong> — Docker &amp; Docker Compose running
+                                a 10+ service production stack</li>
+                            <li class="mb-2"><strong>Reverse proxy &amp; PKI</strong> — Nginx Proxy Manager routing,
+                                custom Multi-SAN certificate forging with OpenSSL, root CA trust deployment</li>
+                            <li class="mb-2"><strong>VPN mesh networking</strong> — Tailscale/WireGuard, MagicDNS,
+                                per-interface firewall scoping</li>
+                            <li class="mb-2"><strong>DNS administration</strong> — Pi-hole custom-domain resolution
+                                and ad-blocking across a split-horizon network</li>
+                            <li><strong>Enterprise identity</strong> — Windows Server Active Directory Domain
+                                Services, Domain Controller promotion, OU/Security Group design, Group Policy
+                                Objects, NTFS permissioning</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#skills-software" aria-expanded="false" aria-controls="skills-software">
-                            Software Engineering
-                        </button>
-                    </h3>
-                    <div id="skills-software" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <ul class="mb-0">
-                                <li class="mb-2"><strong>Python</strong> — a ~20-mixin, MRO-composed game engine
-                                    architecture; automation scripting; API integration</li>
-                                <li class="mb-2"><strong>Data-driven design</strong> — JSON schema validation,
-                                    referential-integrity tooling built from scratch</li>
-                                <li class="mb-2"><strong>State machines</strong> — branching dialogue trees,
-                                    environmental hazard chain-reactions, a 16+ type quick-time-event system</li>
-                                <li class="mb-2"><strong>Client-server</strong> — a self-hosted Flask/waitress
-                                    leaderboard API behind a Cloudflare Tunnel, with its own security model</li>
-                                <li class="mb-2"><strong>Cross-platform release engineering</strong> — signed Android
-                                    APK/AAB builds (Buildozer), Windows executables (PyInstaller), Linux</li>
-                                <li><strong>Automated QA tooling</strong> — a headless smoke-test driver and an
-                                    automated "chaos crawler" regression tester I designed for the engine</li>
-                            </ul>
-                        </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#skills-software" aria-expanded="false" aria-controls="skills-software">
+                        Software Engineering
+                    </button>
+                </h3>
+                <div id="skills-software" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul class="mb-0">
+                            <li class="mb-2"><strong>Python</strong> — a ~20-mixin, MRO-composed game engine
+                                architecture; automation scripting; API integration</li>
+                            <li class="mb-2"><strong>Data-driven design</strong> — JSON schema validation,
+                                referential-integrity tooling built from scratch</li>
+                            <li class="mb-2"><strong>State machines</strong> — branching dialogue trees,
+                                environmental hazard chain-reactions, a 16+ type quick-time-event system</li>
+                            <li class="mb-2"><strong>Client-server</strong> — a self-hosted Flask/waitress
+                                leaderboard API behind a Cloudflare Tunnel, with its own security model</li>
+                            <li class="mb-2"><strong>Cross-platform release engineering</strong> — signed Android
+                                APK/AAB builds (Buildozer), Windows executables (PyInstaller), Linux</li>
+                            <li><strong>Automated QA tooling</strong> — a headless smoke-test driver and an
+                                automated "chaos crawler" regression tester I designed for the engine</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#skills-edge">
-                            Edge / On-Device AI
-                        </button>
-                    </h3>
-                    <div id="skills-edge" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <ul class="mb-0">
-                                <li class="mb-2"><strong>Local LLM deployment</strong> — built llama.cpp from source on
-                                    Android (Termux), running a quantized Qwen2.5 model fully offline</li>
-                                <li class="mb-2"><strong>Applied ML pipeline</strong> — chained speech-to-text
-                                    (Whisper.cpp) and vision (SmolVLM) models into on-device utilities</li>
-                                <li class="mb-2"><strong>Real debugging under constraints</strong> — isolated and worked
-                                    around a genuine thread-count race condition in llama.cpp's CPU compute path</li>
-                                <li><strong>Task automation</strong> — cron-scheduled Python pipelines (a fully local
-                                    Gmail/Calendar morning digest), systemd boot-persistence scripting</li>
-                            </ul>
-                        </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#skills-edge" aria-expanded="false" aria-controls="skills-edge">
+                        Edge / On-Device AI
+                    </button>
+                </h3>
+                <div id="skills-edge" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul class="mb-0">
+                            <li class="mb-2"><strong>Local LLM deployment</strong> — built llama.cpp from source on
+                                Android (Termux), running a quantized Qwen2.5 model fully offline</li>
+                            <li class="mb-2"><strong>Applied ML pipeline</strong> — chained speech-to-text
+                                (Whisper.cpp) and vision (SmolVLM) models into on-device utilities</li>
+                            <li class="mb-2"><strong>Real debugging under constraints</strong> — isolated and worked
+                                around a genuine thread-count race condition in llama.cpp's CPU compute path</li>
+                            <li><strong>Task automation</strong> — cron-scheduled Python pipelines (a fully local
+                                Gmail/Calendar morning digest), systemd boot-persistence scripting</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#skills-certifications">
-                            Certifications &amp; Coursework
-                        </button>
-                    </h3>
-                    <div id="skills-certifications" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <h3 class="h6">Completed</h3>
-                            <ul>
-                                <li>Linux Foundation — Intro to Linux</li>
-                                <li>Cisco Networking Basics</li>
-                                <li>Cisco Computer Hardware Basics</li>
-                                <li>Cisco Network Addressing &amp; Basic Troubleshooting</li>
-                                <li>Cisco Network Support and Security</li>
-                            </ul>
-                            <h3 class="h6">In Progress</h3>
-                            <ul>
-                                <li>Bachelor's of Computer Science</li>
-                                <li>Linux Foundation — Linux System Administration</li>
-                                <li>Linux Foundation — Linux Networking &amp; Security</li>
-                            </ul>
-                        </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#skills-certifications" aria-expanded="false"
+                        aria-controls="skills-certifications">
+                        Certifications &amp; Coursework
+                    </button>
+                </h3>
+                <div id="skills-certifications" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <h4 class="h6">Completed</h4>
+                        <ul>
+                            <li>Linux Foundation — Intro to Linux</li>
+                            <li>Cisco Networking Basics</li>
+                            <li>Cisco Computer Hardware Basics</li>
+                            <li>Cisco Network Addressing &amp; Basic Troubleshooting</li>
+                            <li>Cisco Network Support and Security</li>
+                        </ul>
+                        <h4 class="h6">In Progress</h4>
+                        <ul>
+                            <li>Bachelor's of Computer Science</li>
+                            <li>Linux Foundation — Linux System Administration</li>
+                            <li>Linux Foundation — Linux Networking &amp; Security</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -168,10 +154,10 @@
     <script>
         // Load only the #site-nav element from navbar.html
         $("#nav-placeholder").load("navbar.html #site-nav", function () {
-        const page = location.pathname.split("/").pop() || "index.html";
-        $('#site-nav .nav-link[href="' + page + '"]')
-            .addClass("active")
-            .attr("aria-current", "page");
+            const page = location.pathname.split("/").pop() || "index.html";
+            $('#site-nav .nav-link[href="' + page + '"]')
+                .addClass("active")
+                .attr("aria-current", "page");
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
