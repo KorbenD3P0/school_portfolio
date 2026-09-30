@@ -21,6 +21,7 @@
 </head>
 
 <body>
+  <a href ="#main-content" class="visually-hidden-focusable">Skip to main content</a>
   <!-- Navbar gets added here -->
   <div id="nav-placeholder"></div>
   <main id="main-content" class="container py-5">
@@ -36,7 +37,7 @@
       JSON game data for SIX games I am also developing, data verification on init, debugging logs and more!
     </p>
 
-    <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion" id="gamesAccordion">
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -46,8 +47,10 @@
           </button>
         </h2>
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-          <div class="accordion-body">
-            <strong>The most complete game so far.</strong> Do you believe a stranger's vision? A bridge collapsing, an
+          <div class="accordion-body clearfix">
+            <!-- This title image was taken on a tablet, so it has a different aspect ratio than the others.-->
+            <img src="assets/images/dd_title.png" class="d-block mx-auto float-md-end ms-md-3 mb-3" alt="Death's Designs game title screen - one of several that alternates every new game" width="200" height="320">
+            <strong>What would you do to get off of Death's List?</strong> Do you believe a stranger's vision? A bridge collapsing, an
             escalator turning into a meat grinder, whatever catastrophe the shuffled deck deals that round.<br>Disrupt
             the design by helping people escape, letting the chaos unfold, or walking away entirely. Now Death is
             correcting it, one name at a time, and you're the only one who ever saw it coming.
@@ -63,7 +66,8 @@
           </button>
         </h2>
         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-          <div class="accordion-body">
+          <div class="accordion-body clearfix">
+            <img src="assets/images/noun_title.png" class="d-block mx-auto float-md-end ms-md-3 mb-3" alt="The Noun game title screen - a dog, mid-transformation into ..something else" width="200">
             <strong>Among Us with a twist.</strong> An Antarctic research outpost, cut off for the season, twelve people
             who all know each other ..or so they think. Something arrived with a helicopter crash, and it can wear a
             face perfectly enough that even the people who see it every day can't tell. Investigate, run tests, confront
@@ -81,11 +85,72 @@
           </button>
         </h2>
         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-          <div class="accordion-body">
-            <strong>A unique take on the choose-your-own-adventure genre.</strong> A true branching-node adventure, not
+          <div class="accordion-body clearfix">
+            <img src="assets/images/cyod_title.png" class="d-block mx-auto float-md-end ms-md-3 mb-3" alt="Choose Your Own Deadventure game title screen - blank for now as no poster has been made for it yet" width="200">
+            <strong>Simple actions, complex consequences</strong> A true branching-node adventure, not
             a linear game with the occasional fork — every scene is a real decision point, and every decision can save
             someone or cost them. Death's shuffled a kill order for your friend group behind the scenes, and the only
             warning is a phone call you can choose to ignore.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseFour">
+            Pliers
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+          <div class="accordion-body clearfix">
+            <img src="assets/images/pliers_title.png" class="d-block mx-auto float-md-end ms-md-3 mb-3" alt="Pliers game title screen - an open mouth with several missing teeth" width="200">
+            <strong>The Saw-knockoff. The Sawkoff.</strong> 
+              You wake up not knowing where you are, accused of something by a faceless voice. 
+              Before you've even seen the room, an opening quiz, answered under duress, decides what 
+              you did and how guilty you actually are.
+              <br>Everything downstream traces back to those answers: the hazards Needlenose builds 
+              for you, how the other four captives treat you, and the exact shape of the trap waiting 
+              at the end. He calls the whole apparatus The Vise. Nobody in it got there by accident, 
+              including you.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseFive">
+            Dead Bitches
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+          <div class="accordion-body clearfix">
+            <img src="assets/images/db_title.png" class="d-block mx-auto float-md-end ms-md-3 mb-3" alt="Dead Bitches game title screen with no background as no poster has been made for it yet" width="200">
+            <strong>Nightmare on Elm Street-inspired Nonsense</strong> 
+            A fifteen-member high-school roster gets picked off across one very bad week by 
+            Frederick, who doesn't need a weapon or an open door: he attacks through dreams.
+            <br>
+            Fall asleep and you're vulnerable. Stay awake too long and you're a wreck. Everyone 
+            you know is on the same clock, counting down to a Friday night nobody sleeps through.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseSix">
+            Last Stop
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+          <div class="accordion-body clearfix">
+            <img src="assets/images/ls_title.png" class="d-block mx-auto float-md-end ms-md-3 mb-3" alt="Last Stop game title screen with no background as no poster has been made for it yet" width="200" height="445">
+            <strong>Is it a prequel, a sequel ..or both?</strong> 
+            A linear story set years before Death's Designs. Somebody else had the vision: 
+            a stranger who may not even be alive. Now you're collateral damage in a plan that 
+            might already have taken itself to the grave.
           </div>
         </div>
       </div>
