@@ -30,8 +30,10 @@
     <h1 class="display-6 fw-bold">Homelab &amp; DieNamic Engine Core</h1>
     <p class="lead">A single Linux server running headless; no desktop session unless I want. The choice was
       intentional, to save
-      memory since the tower is from ~2010.<br>The lab is reachable only through a private VPN mesh accessible from my
-      phone, laptop and tablet —
+      memory since the tower is from ~2010.<br>The lab itself is reachable only through a private VPN mesh accessible
+      from my
+      phone, laptop and tablet, while a few sites hosted are served via Cloudflare tunnel so no ports are open on my
+      router —
       nothing is exposed to the internet by raw IP.<br><br>
       Traffic flows: <strong>Tailscale mesh -> firewall (UFW, default-deny) -> DNS
         resolution (Pi-hole) -> reverse proxy + TLS termination (Nginx Proxy Manager) ->
@@ -140,20 +142,27 @@
       house
       ("House Trap") was the starting point.
     </p>
+
     <div id="game-carousel" class="carousel slide my-4">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <figure class="mb-0">
-            <img src="assets/images/terminal_game.png" class="d-block w-100"
-              alt="Terminal window running the original text adventure">
+            <button type="button" class="btn btn-link p-0 m-0 d-block w-100" data-bs-toggle="modal" data-bs-target="#mt-modal">
+              <span class="visually-hidden">Enlarge image: </span>
+              <img src="assets/images/terminal_game.png" class="d-block w-100"
+                alt="McKinley Manor's launch and intro text priming the player for the story to come">
+            </button>
             <figcaption class="carousel-caption-below">From single script to EXE file<br>McKinley Manor would become
               HouseTrap - a script grew into a database</figcaption>
           </figure>
         </div>
         <div class="carousel-item">
           <figure class="mb-0">
-            <img src="assets/images/fdt.png" class="d-block w-100" alt="Final Destination: Terminal title screen">
-            <figcaption class="carousel-caption-below">EXEs became AAB's, or Android applications<br>HouseTrap turned
+            <button type="button" class="btn btn-link p-0 m-0 d-block w-100" data-bs-toggle="modal" data-bs-target="#fdt-modal">
+              <span class="visually-hidden">Enlarge image: </span>  
+              <img src="assets/images/fdt.png" class="d-block w-100" alt="Final Destination: Terminal title screen">
+            </button>
+            <figcaption class="carousel-caption-below">EXEs became AABs, or Android applications<br>HouseTrap turned
               into Final
               Destination: Terminal - I used Buildozer to package the project for Android and successfully ported to my
               Steam Deck for shigs</figcaption>
@@ -161,8 +170,11 @@
         </div>
         <div class="carousel-item">
           <figure class="mb-0">
-            <img src="assets/images/store_listing.png" class="d-block w-100"
-              alt="DieNamic Engine Google Play Store screen">
+            <button type="button" class="btn btn-link p-0 m-0 d-block w-100" data-bs-toggle="modal" data-bs-target="#store-modal">
+              <span class="visually-hidden">Enlarge image: </span>
+              <img src="assets/images/store_listing.png" class="d-block w-100"
+                alt="DieNamic Engine Google Play Store screen">
+            </button>
             <figcaption class="carousel-caption-below">To the Google Play Store, and beyond!<br>FDT became legally
               distinct - Death's Designs - and what it ran on became a full-fledged game-agnostic engine</figcaption>
           </figure>
@@ -198,6 +210,51 @@
     <a href="games.html"><img src="assets/images/game_select.png" class="d-block w-100"
         alt="DieNamic Engine game select screen"></a>
   </main>
+  <!-- Fullscreen viewer for carousel slide 1 (opened by the button with data-bs-target="#mt-modal") -->
+  <div class="modal fade" id="mt-modal" tabindex="-1" aria-labelledby="mt-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="mt-modal-title">McKinley Manor: the original terminal game that evolved into Death's Designs</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex align-items-center justify-content-center">
+          <img src="assets/images/terminal_game.png" class="img-fluid"
+            alt="Terminal window running the original McKinley Manor text adventure">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fullscreen viewer for carousel slide 2 (opened by the button with data-bs-target="#fdt-modal") -->
+  <div class="modal fade" id="fdt-modal" tabindex="-1" aria-labelledby="fdt-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="fdt-modal-title">Final Destination: Terminal, the first Android port</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex align-items-center justify-content-center">
+          <img src="assets/images/fdt.png" class="img-fluid"
+            alt="Final Destination: Terminal title screen running on an Android phone">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fullscreen viewer for carousel slide 3 (opened by the button with data-bs-target="#store-modal") -->
+  <div class="modal fade" id="store-modal" tabindex="-1" aria-labelledby="store-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="store-modal-title">DieNamic Engine on the Google Play Store</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex align-items-center justify-content-center"> 
+          <img src="assets/images/store_listing.png" class="img-fluid"
+            alt="DieNamic Engine Google Play Store listing">
+        </div>
+      </div>
+    </div>
+  </div>
   <footer class="container py-5">
     <div class="alert alert-warning">
       <!-- This footer comes with a warning for people with a low tolerance for graphic content -->

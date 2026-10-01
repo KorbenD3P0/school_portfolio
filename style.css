@@ -122,3 +122,11 @@
   height: 480px;
   /* arrows centre on the image, not image + caption */
 }
+
+.modal-body img {
+  max-height: 90vh;
+  /* fit inside the viewport */
+  object-fit: contain;
+  background-color: var(--bg-elevated);
+  border-radius: var(--bs-border-radius);
+}
