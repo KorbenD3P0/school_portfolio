@@ -1,5 +1,35 @@
 /* Remap Bootstrap's own variables so its components use these colors. */
 :root,
+
+[data-bs-theme="light"] {
+  --bs-body-bg: #f8f9fa;
+  /* page background (lightest tone) */
+  --bs-body-color: #212529;
+  /* normal text */
+  --bs-emphasis-color: #000000;
+  /* high-emphasis text */
+  --bs-secondary-color: #4a5163;
+  /* muted text */
+  --bs-border-color: #dee2e6;
+  /* borders between surfaces */
+  --bs-border-color-translucent: #dee2e6;
+  --bs-tertiary-bg: #e9ecef;
+  /* highlighted panels */
+  --bs-link-color: #0b5cad;
+  --bs-link-hover-color: #084298;
+  --bs-link-color-rgb: 11, 92, 173;
+  --bs-primary: #0f7a52;
+  /* mint accent */
+  --bs-primary-rgb: 15, 122, 82;
+  --bs-primary-text-emphasis: #0b6a47;
+  --bs-focus-ring-color: rgba(13, 110, 253, 0.75);
+
+  /* My variables (Bootstrap doesn't use these) */
+  --bg-elevated: #ffffff;
+  /* highlighted panels so user knows what they're interacting with */
+  --focus-ring: #0d6efd;
+}
+
 [data-bs-theme="dark"] {
   --bs-body-bg: #0f1115;
   /* page background (darkest tone) */
@@ -25,7 +55,7 @@
 
   /* My own variables (Bootstrap doesn't use these) */
   --bg-elevated: #161922;
-  /* raised panels (middle tone) */
+  /* highlighted panels so user knows what they're interacting with */
   --focus-ring: #ffd166;
 }
 
