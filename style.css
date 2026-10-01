@@ -162,7 +162,7 @@
 #game-carousel .carousel-control-prev,
 #game-carousel .carousel-control-next {
   height: 480px;
-  /* arrows centre on the image, not image + caption */
+  /* arrows center on the image, not image + caption */
 }
 
 .modal-body img {
