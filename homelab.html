@@ -29,12 +29,13 @@
   <main id="main-content" class="container py-5">
     <p class="eyebrow">Projects</p>
     <h1 class="display-6 fw-bold">Homelab &amp; DieNamic Engine Core</h1>
-    <p class="lead">A single Linux server running headless; no desktop session unless I want. The choice was
+    <p class="lead">My setup is a modest single Linux server running headless; no desktop session unless I want. The
+      choice was
       intentional, to save
       memory since the tower is from ~2010.<br>The lab itself is reachable only through a private VPN mesh accessible
       from my
-      phone, laptop and tablet, while a few sites hosted are served via Cloudflare tunnel so no ports are open on my
-      router —
+      phone, laptop and tablet, while a few sites hosted are served via Cloudflare tunnel (so no ports are open on my
+      router) —
       nothing is exposed to the internet by raw IP.<br><br>
       Traffic flows: <strong>Tailscale mesh -> firewall (UFW, default-deny) -> DNS
         resolution (Pi-hole) -> reverse proxy + TLS termination (Nginx Proxy Manager) ->
@@ -187,13 +188,7 @@
       <a href="games.html">games page</a>) on one shared core, like a regular console — new games are
       added by writing game-specific data and mixins that extend the core functionality to meet each game's needs,
       never by editing engine internals. This allows for rapid prototyping and iteration, and for the
-      engine to be used as a base for future projects.<br>
-      The core engine was pieced together after coming across a Reddit post about there not being a
-      'Final Destination' game. Knowing I couldn't create and manipulate 3D environments yet, but knowing damn well that
-      I could write stories in that universe, the decision was made to create one and to start simple. I settled on a
-      branching text adventure like those old 'Goosebumps' books I grew up on. A single shell script about a deadly
-      house
-      ("House Trap") was the starting point.
+      engine to be used as a base for future projects.
     </p>
 
     <div id="game-carousel" class="carousel slide my-4 site-carousel">
@@ -206,8 +201,17 @@
               <img src="assets/images/terminal_game.png" class="d-block w-100"
                 alt="McKinley Manor's launch and intro text priming the player for the story to come">
             </button>
-            <figcaption class="carousel-caption-below">From single script to EXE file<br>McKinley Manor would become
-              HouseTrap - a script grew into a database</figcaption>
+            <figcaption class="carousel-caption-below">•From single script to EXE file - McKinley Manor would become
+              HouseTrap•<br>The core engine was pieced together after coming across a Reddit post about there not being
+              a
+              'Final Destination' game. Knowing I couldn't create and manipulate 3D environments yet, but knowing damn
+              well that
+              I could write stories in that universe, the decision was made to create one and to start simple. I settled
+              on a
+              branching text adventure like those old 'Goosebumps' books I grew up on. A single shell script about a
+              deadly
+              house
+              ("House Trap") was the starting point.</figcaption>
           </figure>
         </div>
         <div class="carousel-item">
@@ -217,10 +221,17 @@
               <span class="visually-hidden">Enlarge image: </span>
               <img src="assets/images/fdt.png" class="d-block w-100" alt="Final Destination: Terminal title screen">
             </button>
-            <figcaption class="carousel-caption-below">EXEs became AABs, or Android applications<br>HouseTrap turned
-              into Final
-              Destination: Terminal - I used Buildozer to package the project for Android and successfully ported to my
-              Steam Deck for shigs</figcaption>
+            <figcaption class="carousel-caption-below">•EXEs became AABs, or Android applications -
+              I used Buildozer to package the project for Android and even ported to my
+              Steam Deck for shigs•<br>As an amateur game developer, I had to start asking myself down to earth
+              questions. What do all games need? A
+              world to take place in. A location became a navigable map, that map got filled with objects, those objects
+              got
+              descriptions, attributes and details, those details became lore, that lore became unlockable through
+              action. Find
+              the item, unlock the backstory in a journal. Along came achievements, character types with their own
+              strengths and
+              weaknesses, an antagonist that learns from your actions, chain-reactive dangers..</figcaption>
           </figure>
         </div>
         <div class="carousel-item">
@@ -231,8 +242,14 @@
               <img src="assets/images/store_listing.png" class="d-block w-100"
                 alt="DieNamic Engine Google Play Store screen">
             </button>
-            <figcaption class="carousel-caption-below">To the Google Play Store, and beyond!<br>FDT became legally
-              distinct - Death's Designs - and what it ran on became a full-fledged game-agnostic engine</figcaption>
+            <figcaption class="carousel-caption-below">•To the Google Play Store, and beyond!•<br>As functions piled up,
+              the need to refactor turned one script into a main.py entry point with several
+              dedicated engines for major function groups. A hazard engine was created to handle environmental dangers,
+              the need for danger reactivity led to the integration of a QTE engine, and so on until
+              the project had grown into a full-fledged game-agnostic engine with bootstrapping, assets, animation and
+              audio,
+              JSON game data for SIX games I am also developing, data verification on init, debugging logs and more!
+            </figcaption>
           </figure>
         </div>
       </div>
@@ -254,14 +271,15 @@
       </button>
     </div>
     <p>
-      <br>As an amateur game developer, I had to start asking myself down to earth questions. What do all games need? A
-      world to take place in. A location became a navigable map, that map got filled with objects, those objects got
-      descriptions, attributes and details, those details became lore, that lore became unlockable through action. Find
-      the item, unlock the backstory in a journal. Along came achievements, character types with their own strengths and
-      weaknesses, an antagonist that learns from your actions, chain-reactive dangers.. The idea was converting movie
-      tropes into game mechanics, and I have a blast doing it. There are games that emulate John Carpenter's The Thing,
-      Saw, A Nightmare on Elm Street, and whatever else I can think up, all with their own separate functions that all
-      work on the same core engine.
+      The idea was converting movie
+      tropes into game mechanics, and I have a blast doing it! You think, 'how do these villains operate, and how can
+      those behaviors be turned into reusable functions?' There are games that emulate John Carpenter's The Thing, so
+      the antagonist is infected and attempts to assimilate others overnight to take over the base. In the not-Saw game,
+      the player has woken up in an unknown place and has to escape. A Not-mare on Pine Street (Dead Bitches) has
+      players attempting to
+      stay awake througgh the week and save their friends using Dream abilities. The fun is thinking up a new idea and
+      working it into the
+      existing code. Each game has their own separate functions that all work on the same core engine.
     </p>
     <a href="games.html"><img src="assets/images/game_select.png" class="d-block w-100"
         alt="DieNamic Engine game select screen"></a>
@@ -361,7 +379,8 @@
         The DieNamic Engine is my own original idea while the
         games created for it are based loosely on existing works. The concept, engine design, stories, UI, screens,
         layouts and art
-        were either created by me, or in the case of sprites & animation, assets were purchased and RIGged by me using
+        were either created by me, or in the case of sprites & animation, assets were purchased and RIGged by me
+        using
         tools I created.
         <br>I used paid AI coding assistants as a tool to help write code and stub content for
         features I didn't yet know how to build, as well as reviewing my existing code for
