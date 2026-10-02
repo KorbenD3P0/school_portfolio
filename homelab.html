@@ -30,13 +30,9 @@
     <p class="eyebrow">Projects</p>
     <h1 class="display-6 fw-bold">Homelab &amp; DieNamic Engine Core</h1>
     <p class="lead">My setup is a modest single Linux server running headless; no desktop session unless I want. The
-      choice was
-      intentional, to save
-      memory since the tower is from ~2010.<br>The lab itself is reachable only through a private VPN mesh accessible
-      from my
-      phone, laptop and tablet, while a few sites hosted are served via Cloudflare tunnel (so no ports are open on my
-      router) —
-      nothing is exposed to the internet by raw IP.<br><br>
+      choice was intentional, to save memory since the tower is from ~2010. The lab itself is reachable only through
+      a private VPN mesh accessible from my phone, laptop and tablet, while a few sites hosted are served via Cloudflare
+      tunnel (so no ports are open on my router) — nothing is exposed to the internet by raw IP.<br><br>
       Traffic flows: <strong>Tailscale mesh -> firewall (UFW, default-deny) -> DNS
         resolution (Pi-hole) -> reverse proxy + TLS termination (Nginx Proxy Manager) ->
         individual service</strong>, with Authentik sitting in front of anything
@@ -53,9 +49,11 @@
               <img src="assets/images/homepage_1.png" class="d-block w-100"
                 alt="My homepage dashboard, showing the status of every service in my homelab">
             </button>
-            <figcaption class="carousel-caption-below"><strong>My homepage dashboard</strong><br>I can log in to view the status of
-              each service
-              at any time by enabling TailScale and logging in</figcaption>
+            <figcaption class="carousel-caption-below"><strong>My homepage dashboard</strong><br>
+              Some programs/cards are cosmetic, but some have real functionality, like Uptime Kuma
+              using Ntfy to alert my phone if any important service goes down!
+              From there, I can SSH in and diagnose the issue and restart the service if need be,
+              all from my phone, tablet or computer while I'm away from home.</figcaption>
           </figure>
         </div>
         <div class="carousel-item">
@@ -76,9 +74,9 @@
         </div>
       </div>
 
-            <div class="carousel-indicators">
-        <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       </div>
 
