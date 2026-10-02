@@ -29,16 +29,42 @@
     <main id="main-content" class="container py-5">
         <p class="eyebrow">About</p>
         <h1 class="display-6 fw-bold">Hi, I'm Dallas.</h1>
-        <p class="lead">
-            I build and run things end to end.<br>What began as a hobby creating cronjobs and bash
-            script projects turned into a self-hosted homelab with real
-            identity management, monitoring, and disaster recovery, as well as a
-            from-scratch Python game engine with six functional titles in various stages of development.<br><br>
-            The site you're reading this on was a class assignment, but it's actually being hosted on my own server,
-            with a custom Nginx reverse proxy and a Let's Encrypt certificate I generated myself.
-            What's below came out of personal projects I researched and completed before going back to school.
-            I run into a real problem, learn what's needed to solve it properly, and
-            track it in runbooks and personal tickets so I don't have to relearn it later. Once some initial curiosity-driven problems were solved and new programs were 
+        <p class="lead">I build and run things end to end.</p>
+
+        <div class="accordion mb-3" id="intro-accordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#intro-what" aria-expanded="true" aria-controls="intro-what">
+                        What I do
+                    </button>
+                </h2>
+                <div id="intro-what" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <p class="mb-0">
+                            What began as a hobby creating cronjobs and bash script projects turned into a 
+                            self-hosted homelab with real identity management, monitoring, automation and 
+                            disaster recovery, as well as a from-scratch Python game engine with a custom
+                             data-driven architecture and six functional titles in various stages of 
+                             development. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#intro-why" aria-expanded="false" aria-controls="intro-why">
+                        Why and how I do it
+                    </button>
+                </h2>
+                <div id="intro-why" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <p class="mb-0">
+                            What's below came out of personal projects I researched and completed before 
+                            going back to school. I would run into a real problem, learn what's needed to solve 
+                            it properly, and track it in runbooks and personal tickets so I don't have to 
+                            completely relearn it later. Once some initial curiosity-driven problems were solved and new programs were 
                             installed and configured, I would then look for ways to use the newly available capabilities 
                             to solve other problems, and so on.
                         </p>
@@ -153,14 +179,13 @@
                         </ul>
                         <h4 class="h6">In Progress</h4>
                         <ul>
-                            <li>Bachelor's of Science in Computer Science</li>
-                            <li>Linux Foundation — Linux System Administration</li>
-                            <li>Linux Foundation — Linux Networking &amp; Security</li>
-                        </ul>
+                            <li>Bachelor of Science in Computer Science</li>
+                            <li>CompTIA A+ Core 2</li>                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
     <footer class="container py-5">
         <p>&copy; 2026 DieNamic Engine. All rights reserved.</p>
