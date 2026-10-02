@@ -132,7 +132,7 @@
 }
 
 /* Carousel: same-height slides, captions and barsbelow the image */
-#game-carousel img {
+.site-carousel img {
   height: 480px;
   object-fit: contain;
   /* fit whole image inside, no cropping */
@@ -148,19 +148,19 @@
   font-size: 0.9rem;
 }
 
-#game-carousel .carousel-indicators {
+.site-carousel .carousel-indicators {
   position: static;
   /* sit in normal flow, below the caption */
   margin: 0.75rem 0 0;
 }
 
-#game-carousel .carousel-indicators [data-bs-target] {
+.site-carousel .carousel-indicators [data-bs-target] {
   background-color: var(--bs-primary);
   /* mint bars */
 }
 
-#game-carousel .carousel-control-prev,
-#game-carousel .carousel-control-next {
+.site-carousel .carousel-control-prev,
+.site-carousel .carousel-control-next {
   height: 480px;
   /* arrows center on the image, not image + caption */
 }

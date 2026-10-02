@@ -8,8 +8,9 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/images/icon.png" type="image/png">
   <script src="theme.js"></script>
+
   <!-- Bootstrap 5 CSS (must load BEFORE style.css so these overrides win, like reverse Python 
-     where last function defined loads even if there's duplicates) -->
+     where the last function defined is what loads even if there's duplicates) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -40,6 +41,58 @@
         individual service</strong>, with Authentik sitting in front of anything
       that needs single sign-on and MFA.
     </p>
+
+    <div id="homepage-carousel" class="carousel slide my-4 site-carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <figure class="mb-0">
+            <button type="button" class="btn btn-link p-0 m-0 d-block w-100" data-bs-toggle="modal"
+              data-bs-target="#hp1-modal">
+              <span class="visually-hidden">Enlarge image: </span>
+              <img src="assets/images/homepage_1.png" class="d-block w-100"
+                alt="My homepage dashboard, showing the status of every service in my homelab">
+            </button>
+            <figcaption class="carousel-caption-below"><strong>My homepage dashboard</strong><br>I can log in to view the status of
+              each service
+              at any time by enabling TailScale and logging in</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-item">
+          <figure class="mb-0">
+            <button type="button" class="btn btn-link p-0 m-0 d-block w-100" data-bs-toggle="modal"
+              data-bs-target="#hp2-modal">
+              <span class="visually-hidden">Enlarge image: </span>
+              <img src="assets/images/homepage_2.png" class="d-block w-100" alt="Additional homepage dashboard showing the status of every 
+              remaining service in my homelab">
+            </button>
+            <figcaption class="carousel-caption-below"><strong>Additional homepage dashboard</strong><br>•APIs/keys enable even more services you can monitor•<br>
+              Obtaining APIs for your various digital services allows for greater visibility and control<br>
+              After setting up my initial homepage, I began looking into what other services I could include and what
+              capabilities I could add.
+              A lot are cosmetic, but some have real functionality, like notifying my phone if any service goes down!
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+            <div class="carousel-indicators">
+        <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#homepage-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#homepage-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+
+
     <h2 class="h4 fw-bold mt-5 mb-3">The Homelab</h2>
     <h3 class="h5 mt-4">Services running in production</h3>
     <!-- A plain HTML table on purpose: this is genuinely
@@ -143,7 +196,7 @@
       ("House Trap") was the starting point.
     </p>
 
-    <div id="game-carousel" class="carousel slide my-4">
+    <div id="game-carousel" class="carousel slide my-4 site-carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <figure class="mb-0">
@@ -213,12 +266,45 @@
     <a href="games.html"><img src="assets/images/game_select.png" class="d-block w-100"
         alt="DieNamic Engine game select screen"></a>
   </main>
+  <!-- Fullscreen viewer for homepage carousel slide 1 (opened by data-bs-target="#hp1-modal") -->
+  <div class="modal fade" id="hp1-modal" tabindex="-1" aria-labelledby="hp1-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="hp1-modal-title">My homepage dashboard, showing the status of every service
+            in my homelab</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex align-items-center justify-content-center">
+          <img src="assets/images/homepage_1.png" class="img-fluid"
+            alt="My homepage dashboard, showing the status of every service in my homelab">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fullscreen viewer for homepage carousel slide 2 (opened by data-bs-target="#hp2-modal") -->
+  <div class="modal fade" id="hp2-modal" tabindex="-1" aria-labelledby="hp2-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="hp2-modal-title">Additional homepage dashboard showing the status of every
+            remaining service in my homelab</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex align-items-center justify-content-center">
+          <img src="assets/images/homepage_2.png" class="img-fluid"
+            alt="Additional homepage dashboard showing the status of every remaining service in my homelab">
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Fullscreen viewer for carousel slide 1 (opened by the button with data-bs-target="#mt-modal") -->
   <div class="modal fade" id="mt-modal" tabindex="-1" aria-labelledby="mt-modal-title" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title fs-5" id="mt-modal-title">McKinley Manor: the original terminal game that evolved into
+          <h2 class="modal-title fs-5" id="mt-modal-title">McKinley Manor: the original terminal game that evolved
+            into
             Death's Designs</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
